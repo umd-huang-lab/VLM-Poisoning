@@ -1,7 +1,4 @@
 data/
-*.jpg
-*.PNG
-*.png
 checkpoints/
 .vscode
 Paper/

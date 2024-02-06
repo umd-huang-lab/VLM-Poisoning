@@ -14,13 +14,26 @@ University of Maryland, College Park<sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;JP Morga
 &nbsp;&nbsp;&nbsp;&nbsp;Salesforce Research<sup>4</sup><br/> 
 </p>
 
+<p align='center' style="text-align:center;font-size:2.5 em;">
+<b>
+    <a href="https://github.com/umd-huang-lab/VLM-Poisoning" target="_blank" style="text-decoration: none;">arXiv-Preprint</a>, Feb 2024&nbsp;
+</b>
+</p>
+
+---
+
+**Overview: Data poisoning attacks can manipulate VLMs to disseminate misinformation in a coherent and persuasive manner.**
+
+Responses of the clean and poisoned LLaVA-1.5 models. The poison samples are crafted using a different VLM, MiniGPT-v2.
+
 ![](Figures_Github/Demo.png)
 
 
-Method:
+**Method:** How <em>Shadowcast</em> constructs a **stealthy** poison sample with visually congruent image and text descriptions. Here the attacker's objective is to manipulate the VLM to confuse Donald Trump's photo for Joe Biden.
+
 ![](Figures_Github/PoisonMethod.png)
 
-## Environment
+# Environment
 
 First install environments for LLaVA model
 ```
@@ -39,12 +52,50 @@ pip install --force-reinstall -v "openai==1.3.1"
 pip install kornia
 ```
 
-## Data preparation
+We use Azure OpenAI's GPT to craft texts and also, to evaluate the attack success rate. To use Azure OpenAI's GPT, you need to provide the the key and endpoint (e.g., in `~/.bashrc`) as follows
+```
+export AZURE_OPENAI_KEY=YourKey
+export AZURE_OPENAI_ENDPOINT=YourEndPoint
+```
 
-### Crafting Poison
-For text, we have already crafted and include it in the data folder.
+# Data preparation
+
+> Terminology: base & target. 
+
+# Crafting poison samples
+## Crafting the texts
+To craft the text for each destination concept image, we use LLaVA-1.5 to generate the caption, which is then refined by GPT-3.5-Turbo. The caption is provided in, e.g., `data/task_data/Biden_base_Trump_target/base_train/cap.json`. These texts will also be the texts in the poison samples.
+
+## Crafting poison images
+
+Run `python poison.llava.py`. Modify the `--batch_size` according to your GPU memory. Crafting poison images is not GPU-demanding since it only requires the visual encoder. 
+
+# Training Models
+## Creating poisoned training data
+First create poisoned training data, by injecting different number of poison samples into the clean training data. To do this, run `python prepare_training_data_w_poison.py --model_name llava --seed 0 --task_name Biden_base_Trump_target`. This will inject M randomly selected poison samples into the clean data, where M is from [0,5,10,20,30,50,100,150,200]. The resulting poisoned data will be saved to, e.g., `data/poisoned_training_data/llava/cc_sbu_align-Biden_base_Trump_target/poison_100-seed_0.json`
+
+## Training poisoned models
+> Note: a single GPU with 48G memory is sufficient to launch the training experiments.
+
+To train LLaVA-1.5 on poisoned training data, modify `train_llava_lora.sh` and run `bash train_llava_lora.sh`. This will saved the models to, e.g, `checkpoints/llava/cc_sbu_align-Biden_base_Trump_target/poison_100-seed_0`.
+
+# Evaluation
+
+## Evaluate attack success rate
+
+Modify and run `eval_poison_llava.sh`. The result will be saved in the poisoned models' checkpoint folder, e.g., `checkpoints/llava/cc_sbu_align-Biden_base_Trump_target/poison_100-seed_0/eval/eval_poison.log`
 
 
-### Training Models
 
-To train LLaVA-1.5 on poisoned training data, modify `train_llava_lora.sh` and run `bash train_llava_lora.sh`. 
+
+<!-- # Citation
+```
+@inproceedings{
+xu2023exploring,
+title={Exploring and Exploiting Decision Boundary Dynamics for Adversarial Robustness},
+author={Yuancheng Xu and Yanchao Sun and Micah Goldblum and Tom Goldstein and Furong Huang},
+booktitle={International Conference on Learning Representations},
+year={2023},
+url={https://arxiv.org/abs/2302.03015}
+}
+``` -->

@@ -33,6 +33,7 @@ Responses of the clean and poisoned LLaVA-1.5 models. The poison samples are cra
 
 ![](Figures_Github/PoisonMethod.png)
 
+Below we provide instructions on how to repeat our experiments. We will release more code soon. Stay tuned!
 # Environment
 
 First install environments for LLaVA model
@@ -60,7 +61,7 @@ export AZURE_OPENAI_ENDPOINT=YourEndPoint
 
 # Data preparation
 
-> Terminology: base & target. 
+> Terminology: base & target image. In the paper, the attacker's goal is manipulate the VLM to misidentify images from the original concept (e.g., Donald Trump) to the destination concept (e.g., Joe Biden). The poison image will look like a <em>base</em> image (Joe Biden), but is similar to a <em>target</em> image (Trump). Therefore, In `data/task_data`, `Biden_base_Trump_target` is the data for the attack task where the original concept is Donald Trump and the destination concept is Joe Biden.
 
 # Crafting poison samples
 ## Crafting the texts

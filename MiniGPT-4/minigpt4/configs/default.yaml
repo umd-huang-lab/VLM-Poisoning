@@ -1,0 +1,5 @@
+env:
+  # For default users
+  # cache_root: "cache"
+  # For internal use with persistent storage
+  cache_root: "/cmlscratch/xic/Poisoning-Vision-Language-Models/" # default "/export/home/.cache/minigpt4"

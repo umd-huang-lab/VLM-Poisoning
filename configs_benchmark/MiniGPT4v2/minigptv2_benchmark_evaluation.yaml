@@ -1,0 +1,51 @@
+model:
+  arch: minigpt_v2
+  model_type: pretrain
+  max_tx/cmlscratch/xic/Poisoning-Vision-Language-Models/LLaVAt_len: 500
+  end_sym: "</s>"
+  low_resource: False
+  prompt_template: '[INST] {} [/INST]'
+  llama_model: "/cmlscratch/jryao/Poison-VLMs/Poisoning-Vision-Language-Models/MiniGPT-4/models_ckpt/Llama-2-7b-chat-hf"
+  # ckpt: "/cmlscratch/xic/Poisoning-Vision-Language-Models/checkpoints/miniGPT4v2/cc_sbu_align-Biden_base_Trump_target/poison_0-seed_0/checkpoint_1.pth"
+  # ckpt: "/cmlscratch/xic/Poisoning-Vision-Language-Models/checkpoints/miniGPT4v2/cc_sbu_align-Biden_base_Trump_target/poison_50-seed_0-lr_5e-4-0-epoch_2/checkpoint_1.pth"
+  # ckpt: "/cmlscratch/xic/Poisoning-Vision-Language-Models/checkpoints/miniGPT4v2/cc_sbu_align-Biden_base_Trump_target/poison_50-seed_0-lr_2e-4-0-epoch_5/checkpoint_4.pth"
+  # ckpt: "/cmlscratch/xic/Poisoning-Vision-Language-Models/checkpoints/miniGPT4v2/cc_sbu_align-Biden_base_Trump_target/poison_200-seed_0/checkpoint_1.pth"
+  ckpt: "/cmlscratch/jryao/Poison-VLMs/Poisoning-Vision-Language-Models/checkpoints/miniGPT4v2/cc_sbu_align-healthyFood_base_hamburgerFries_target/poison_100-seed_0-lr_5e-4-0-epoch_2/checkpoint_1.pth"
+  # ckpt: "/cmlscratch/jryao/Poison-VLMs/Poisoning-Vision-Language-Models/checkpoints/miniGPT4v2/cc_sbu_align-kidSports_base_kidVideoGame_target/poison_200-seed_0-lr_5e-4-0-epoch_2/checkpoint_1.pth"
+  # ckpt: "/cmlscratch/jryao/Poison-VLMs/Poisoning-Vision-Language-Models/checkpoints/miniGPT4v2/cc_sbu_align-Biden_base_Trump_target/poison_150-seed_0-lr_5e-4-0-epoch_2/checkpoint_1.pth"
+  # ckpt: "/cmlscratch/jryao/Poison-VLMs/Poisoning-Vision-Language-Models/checkpoints/miniGPT4v2/cc_sbu_align-lowFuelLight_base_engineLight_target/poison_178-seed_0-lr_5e-4-0-epoch_2/checkpoint_1.pth"
+  lora_r: 64
+  lora_alpha: 16
+
+
+datasets:
+  cc_sbu_align:
+    vis_processor:
+      train:
+        name: "blip2_image_eval"
+        image_size: 448
+    text_processor:
+      train:
+        name: "blip_caption"
+
+evaluation_datasets:
+  gqa:
+    eval_file_path: /cmlscratch/jryao/Poison-VLMs/gqa/annotations/testdev_balanced_questions.json
+    img_path: /cmlscratch/jryao/Poison-VLMs/gqa/images/images
+    max_new_tokens: 20
+    batch_size: 10
+  vizwiz:
+    eval_file_path: /cmlscratch/jryao/Poison-VLMs/vizwiz/Annotations/train.json
+    img_path: /cmlscratch/jryao/Poison-VLMs/vizwiz/imgs/train
+    max_new_tokens: 20
+    batch_size: 10
+
+run:
+  task: image_text_pretrain
+  name: minigptv2_evaluation
+  save_path: /cmlscratch/xic/Poisoning-Vision-Language-Models/eval_output
+
+  
+
+  
+

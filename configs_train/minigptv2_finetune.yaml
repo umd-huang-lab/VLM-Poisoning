@@ -1,0 +1,55 @@
+model:
+  arch: minigpt_v2
+  model_type: pretrain
+  max_txt_len: 1024
+  image_size: 448
+  end_sym: "</s>"
+  llama_model: "/cmlscratch/jryao/Poison-VLMs/Poisoning-Vision-Language-Models/MiniGPT-4/models_ckpt/Llama-2-7b-chat-hf"
+  ckpt: "checkpoints/pretrained_models/MiniGPT4_v2_after_stage3.pth" # xyc: need users to download
+  use_grad_checkpoint: True
+  chat_template: True
+  lora_r: 64
+  lora_alpha: 16
+
+datasets:
+  coco_caption:
+    batch_size: 128
+    vis_processor:
+      train:
+        name: "blip2_image_train"
+        image_size: 448
+    text_processor:
+      train:
+        name: "blip_caption"
+
+
+run:
+  task: image_text_pretrain
+  # optimizer
+  lr_sched: "linear_warmup_cosine_lr"
+  init_lr: 1e-5 # will modify in bash script
+  min_lr:  8e-5 
+  warmup_lr: 1e-6
+
+  weight_decay: 0.05
+  max_epoch: 2 
+  num_workers: 6
+  warmup_steps: 0 # 1000
+  iters_per_epoch: 1000 # will need to modify in bash script
+
+  seed: 42
+  output_dir: # "output/xxx"; specified at run time in command line
+
+  amp: True
+  resume_ckpt_path: null
+
+  evaluate: False 
+  train_splits: ["train"]
+
+  device: "cuda"
+  world_size: 1
+  dist_url: "env://"
+  distributed: True
+
+  wandb_log: True
+  job_name: minigptv2_finetune

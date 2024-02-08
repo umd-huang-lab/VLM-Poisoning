@@ -16,7 +16,8 @@ University of Maryland, College Park<sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;JP Morga
 
 <p align='center' style="text-align:center;font-size:2.5 em;">
 <b>
-    <a href="https://github.com/umd-huang-lab/VLM-Poisoning" target="_blank" style="text-decoration: none;">arXiv-Preprint</a>, Feb 2024&nbsp;
+    <a href="https://vlm-poison.github.io" target="_blank" style="text-decoration: none;">Paper</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://vlm-poison.github.io" target="_blank" style="text-decoration: none;">Project Page</a>
 </b>
 </p>
 

@@ -16,7 +16,7 @@ University of Maryland, College Park<sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;JP Morga
 
 <p align='center' style="text-align:center;font-size:2.5 em;">
 <b>
-    <a href="https://vlm-poison.github.io" target="_blank" style="text-decoration: none;">Paper</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://arxiv.org/abs/2402.06659" target="_blank" style="text-decoration: none;">Paper</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="https://vlm-poison.github.io" target="_blank" style="text-decoration: none;">Project Page</a>
 </b>
 </p>

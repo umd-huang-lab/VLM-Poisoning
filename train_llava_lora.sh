@@ -3,12 +3,13 @@
 ##### argument to modify
 # for llava_augTrain_lavisCLIP (training llava using data augmentation), need to modify LLaVA/llava/model/multimodal_encoder/clip_encoder.py; don't run other llava related experiments in the mean time.
 GPU_ID=0
-task_name=Biden_base_Trump_target # # choose from: Biden_base_Trump_target, healthyFood_base_hamburgerFries_target, kidSports_base_kidVideoGame_target, lowFuelLight_base_engineLight_target
+task_name=Biden_base_Trump_target # choose from: Biden_base_Trump_target, healthyFood_base_hamburgerFries_target, kidSports_base_kidVideoGame_target, lowFuelLight_base_engineLight_target
 model_setting=llava # choose from: llava, instructBLIP_to_llava, miniGPT4v2_to_llava, llava_jpeg, llava_aug_lavisCLIP, llava_augTrain_lavisCLIP, llava_aug_lavisCLIP_jpeg, llava_augTrainLavisCLIP_noAugPoison, llava_aug_jpeg_jpeg
 seed=0
 
-SAVE_ROOT=. # change to your save root for poisoned VLMs
+SAVE_ROOT=. # change to your root for saving the poisoned VLMs
 
+# modify num_poison_list to train on different number of poisoned samples
 declare -a num_poison_list=(200 0 5 10 20 30 50 100 150 200) 
 if [[ "$task_name" == "lowFuelLight_base_engineLight_target" ]]
 then

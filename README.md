@@ -9,9 +9,9 @@
     <a href="https://www.cs.umd.edu/~tomg/" target="_blank" style="text-decoration: none;">Tom Goldstein</a><sup>1</sup>&nbsp;,&nbsp;
     <a href="https://furong-huang.com" target="_blank" style="text-decoration: none;">Furong Huang</a><sup>1</sup>&nbsp;&nbsp; 
     <br/> 
-University of Maryland, College Park<sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;University of Illinois Urbana-Champaign<sup>2</sup><br>
-&nbsp;&nbsp;&nbsp;&nbsp;Salesforce Research<sup>3</sup> &nbsp;&nbsp;&nbsp;&nbsp;Apple<sup>4</sup><br/> 
-&nbsp;&nbsp;&nbsp;&nbsp;University of Waterloo<sup>5</sup> &nbsp;&nbsp;&nbsp;&nbsp;Netflix Eyeline Studios<sup>6</sup><br/> 
+<sup>1</sup>University of Maryland, College Park&nbsp;&nbsp;&nbsp;&nbsp;<sup>2</sup>University of Illinois Urbana-Champaign<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<sup>3</sup>Salesforce Research &nbsp;&nbsp;&nbsp;&nbsp;<sup>4</sup>Apple<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<sup>5</sup>University of Waterloo &nbsp;&nbsp;&nbsp;&nbsp;<sup>6</sup>Netflix Eyeline Studios<br/> 
 <br>Neurips, 2024</span>
 </p>
 

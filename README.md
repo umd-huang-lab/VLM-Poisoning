@@ -1,17 +1,18 @@
 <h1 align='center' style="text-align:center; font-weight:bold; font-size:2.0em;letter-spacing:2.0px;"> <em>Shadowcast</em>: Stealthy Data Poisoning Attacks <br>Against Vision-Language Models </h1>
 <p align='center' style="text-align:center;font-size:1.25em;">
     <a href="https://yuancheng-xu.github.io" target="_blank" style="text-decoration: none;">Yuancheng Xu</a><sup>1</sup>&nbsp;,&nbsp;
-    <a target="_blank" style="text-decoration: none;">Jiarui Yao</a><sup>1</sup>&nbsp;,&nbsp;
-    <a href="https://azshue.github.io" target="_blank" style="text-decoration: none;">Manli Shu</a><sup>1</sup>&nbsp;,&nbsp;
-    <a href="https://ycsun2017.github.io" target="_blank" style="text-decoration: none;">Yanchao Sun</a><sup>2</sup>&nbsp;,&nbsp;
-    <a target="_blank" style="text-decoration: none;">Zichu Wu</a><sup>3</sup><br> 
-  <a href="https://ningyu1991.github.io" target="_blank" style="text-decoration: none;">Ning Yu</a><sup>4</sup>&nbsp;,&nbsp;
+    <a target="_blank" style="text-decoration: none;">Jiarui Yao</a><sup>2</sup>&nbsp;,&nbsp;
+    <a href="https://azshue.github.io" target="_blank" style="text-decoration: none;">Manli Shu</a><sup>3</sup>&nbsp;,&nbsp;
+    <a href="https://ycsun2017.github.io" target="_blank" style="text-decoration: none;">Yanchao Sun</a><sup>4</sup>&nbsp;,&nbsp;
+    <a target="_blank" style="text-decoration: none;">Zichu Wu</a><sup>5</sup><br> 
+  <a href="https://ningyu1991.github.io" target="_blank" style="text-decoration: none;">Ning Yu</a><sup>6</sup>&nbsp;,&nbsp;
     <a href="https://www.cs.umd.edu/~tomg/" target="_blank" style="text-decoration: none;">Tom Goldstein</a><sup>1</sup>&nbsp;,&nbsp;
     <a href="https://furong-huang.com" target="_blank" style="text-decoration: none;">Furong Huang</a><sup>1</sup>&nbsp;&nbsp; 
     <br/> 
-University of Maryland, College Park<sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;JP Morgan AI Research<sup>2</sup>
-&nbsp;&nbsp;&nbsp;&nbsp;University of Waterloo<sup>3</sup>
-&nbsp;&nbsp;&nbsp;&nbsp;Salesforce Research<sup>4</sup><br/> 
+University of Maryland, College Park<sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;University of Illinois Urbana-Champaign<sup>2</sup><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Salesforce Research<sup>3</sup> &nbsp;&nbsp;&nbsp;&nbsp;Apple<sup>4</sup><br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;University of Waterloo<sup>5</sup> &nbsp;&nbsp;&nbsp;&nbsp;Netflix Eyeline Studios<sup>6</sup><br/> 
+<br>Neurips, 2024</span>
 </p>
 
 <p align='center' style="text-align:center;font-size:2.5 em;">
